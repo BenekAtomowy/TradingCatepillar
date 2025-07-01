@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradingCatepillar", "TradingCatepillar\TradingCatepillar.csproj", "{7A7ACA3F-B0F5-443D-B45A-B7491B0084D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradingCatepillar.Simulator", "TradingCatepillar.Simulator\TradingCatepillar.Simulator.csproj", "{636F9CF4-D9A5-47BD-8715-A361207CDC9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradingCatepillar.Core", "TradingCatepillar.Core\TradingCatepillar.Core.csproj", "{5B60C212-20BF-4804-8208-2BDB3856341B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradingCatepillar.Alpaca.Connector", "TradingCatepillar.Alpaca.Connector\TradingCatepillar.Alpaca.Connector.csproj", "{BE1D8850-B04F-41A2-80F4-ACDAF382EEAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCatepillar.Data.Analysis", "TradingCatepillar.Data.Analysis\TradingCatepillar.Data.Analysis.csproj", "{9B9F658B-CC2B-4B90-8166-A849D03BBE99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCatepillar.Integration.GoogleGemini", "TradingCatepillar.Integration.GoogleGemini\TradingCatepillar.Integration.GoogleGemini.csproj", "{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A7ACA3F-B0F5-443D-B45A-B7491B0084D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7ACA3F-B0F5-443D-B45A-B7491B0084D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7ACA3F-B0F5-443D-B45A-B7491B0084D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7ACA3F-B0F5-443D-B45A-B7491B0084D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636F9CF4-D9A5-47BD-8715-A361207CDC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636F9CF4-D9A5-47BD-8715-A361207CDC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636F9CF4-D9A5-47BD-8715-A361207CDC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636F9CF4-D9A5-47BD-8715-A361207CDC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B60C212-20BF-4804-8208-2BDB3856341B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B60C212-20BF-4804-8208-2BDB3856341B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B60C212-20BF-4804-8208-2BDB3856341B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B60C212-20BF-4804-8208-2BDB3856341B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1D8850-B04F-41A2-80F4-ACDAF382EEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1D8850-B04F-41A2-80F4-ACDAF382EEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1D8850-B04F-41A2-80F4-ACDAF382EEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1D8850-B04F-41A2-80F4-ACDAF382EEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9F658B-CC2B-4B90-8166-A849D03BBE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9F658B-CC2B-4B90-8166-A849D03BBE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9F658B-CC2B-4B90-8166-A849D03BBE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9F658B-CC2B-4B90-8166-A849D03BBE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CAF2439-62A4-4815-A86E-5FE1DA825319}
+	EndGlobalSection
+EndGlobal

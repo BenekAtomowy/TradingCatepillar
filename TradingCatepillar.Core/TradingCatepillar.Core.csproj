@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TradingCatepillar.Alpaca.Connector\TradingCatepillar.Alpaca.Connector.csproj" />
+    <ProjectReference Include="..\TradingCatepillar.Data.Analysis\TradingCatepillar.Data.Analysis.csproj" />
+    <ProjectReference Include="..\TradingCatepillar.Integration.GoogleGemini\TradingCatepillar.Integration.GoogleGemini.csproj" />
+  </ItemGroup>
+
+</Project>
