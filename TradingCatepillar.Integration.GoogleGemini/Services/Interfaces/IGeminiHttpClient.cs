@@ -5,6 +5,6 @@ namespace TradingCatepillar.Integration.GoogleGemini.Services.Interfaces
 {
     public interface IGeminiHttpClient
     {
-        Task<AIRecommendation> AskForRecommendation(AIPrompt instrumentPrompt);
+        Task<AIAnswer> Ask(AIPrompt instrumentPrompt);
     }
 }

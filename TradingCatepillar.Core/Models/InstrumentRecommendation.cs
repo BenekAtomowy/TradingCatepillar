@@ -2,8 +2,13 @@
 
 namespace TradingCatepillar.Integration.GoogleGemini.Models
 {
-    public record AIRecommendation
+    public class InstrumentRecommendation : AIAnswer
     {
+        
+        public InstrumentRecommendation(string answer) : base(answer)
+        {
+        }
+
         [JsonPropertyName("recommendation")]
         public string? Recommendation { get; set; }
         [JsonPropertyName("risk")]

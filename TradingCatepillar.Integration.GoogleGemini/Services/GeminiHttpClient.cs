@@ -17,30 +17,20 @@ namespace TradingCatepillar.Integration.GoogleGemini.Services
             _apiKey = config["ApiSettings:Gemini:ApiKey"] ?? throw new NullReferenceException("ApiSettings:Gemini:ApiKey");
         }
 
-        public async Task<AIRecommendation> AskForRecommendation(AIPrompt instrumentPrompt)
+        public async Task<AIAnswer> Ask(AIPrompt instrumentPrompt)
         {
             var prompt = $"{instrumentPrompt.SystemInformation} {instrumentPrompt.PromptInformation} {instrumentPrompt.OutputDataFormat}";
             var result = await GenerateContentAsync(prompt);
 
-            Console.WriteLine($"Gemini Response: {result}");
-            return ParseRecommendation(result);
-        }
-
-        private static AIRecommendation ParseRecommendation(string json)
-        {
-            json = json
+            var json = result
                 .Trim()
                 .Replace("```json", "")
                 .Replace("```", "")
                 .Trim();
-
-            var result = JsonSerializer.Deserialize<AIRecommendation>(json);
-
-            if (result == null)
-                throw new InvalidOperationException("Failed to parse Gemini response.");
-
-            return result;
+            Console.WriteLine($"Gemini Response: {json}");
+            return new AIAnswer(json);
         }
+        
 
         private async Task<string> GenerateContentAsync(string prompt)
         {

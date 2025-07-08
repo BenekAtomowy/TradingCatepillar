@@ -4,6 +4,9 @@ using TradingCatepillar.Alpaca.Connector.Services;
 using TradingCatepillar.Alpaca.Connector.Services.Interfaces;
 using TradingCatepillar.AlpacaAPI.Connector;
 using TradingCatepillar.Core;
+using TradingCatepillar.Core.Builders;
+using TradingCatepillar.Core.Services;
+using TradingCatepillar.Core.Services.Interafaces;
 using TradingCatepillar.Data.Analysis.Services;
 using TradingCatepillar.Integration.GoogleGemini.Services;
 
@@ -24,14 +27,21 @@ IAlpacaTradeService tradeService = new AlpacaTradeService(client.TradingClient);
 var httpClient = new HttpClient();
 
 var gemini = new GeminiHttpClient(httpClient, configuration);
+var aiRecommendationService = new AIRecommendationService(gemini, new AIPromptBuilder());
 
-var worker = new InstrumentWorker(
+var workerBuilder = new InstrumentWorkerBuilder(
     alpacaDataService: dataService,
     indicatorCalculationService: new IndicatorCalculationService(),
-    gemini
+    aiRecommendationService
 );
 
-await worker.WorkWithInstrument("MSFT");
+var worker = workerBuilder.BuildWorker("MSFT");
+var worker2 = workerBuilder.BuildWorker("AAPL");
+var worker3 = workerBuilder.BuildWorker("LMT");
+
+await worker.WorkWithInstrument();
+await worker2.WorkWithInstrument();
+await worker3.WorkWithInstrument();
 
 var test = "";
 

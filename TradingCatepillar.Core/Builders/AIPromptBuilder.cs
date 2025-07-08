@@ -1,0 +1,37 @@
+﻿using TradingCatepillar.Core.Builders.Interfaces;
+using TradingCatepillar.Core.Models;
+using TradingCatepillar.Integration.GoogleGemini.Models;
+
+namespace TradingCatepillar.Core.Builders
+{
+    public class AIPromptBuilder : IAIPromptBuilder
+    {
+        public AIPrompt BuildPrompt(InstrumentInfo instrumentPrompt)
+        {
+            var prompt = new AIPrompt();
+            prompt.SystemInformation = "You are a financial assistant who always responds in JSON.";
+            prompt.PromptInformation = @$"Find information on the internet about the financial instrument with the symbol {instrumentPrompt.InstrumentSymbol}                                                                 
+                            The indicators I calculated:
+                            RSI: {instrumentPrompt.InstrumentIndicators.Rsi:F2}
+                            EMA: {instrumentPrompt.InstrumentIndicators.Ema:F2}
+                            SMA: {instrumentPrompt.InstrumentIndicators.Sma:F2}
+                            ATR: {instrumentPrompt.InstrumentIndicators.Atr:F2}
+                            MACD: {instrumentPrompt.InstrumentIndicators.Macd:F2}";
+            prompt.OutputDataFormat = @"Based on the information found and the indicators I calculated, evaluate the financial instrument and return EXCLUSIVELY JSON in the following format:
+            {
+                {
+                  'recommendation': 'BUY | SELL | HOLD',
+                  'risk': 'LOW | MEDIUM | HIGH',
+                  'riskPercent': 'percentage of risk',
+                  'comment': '...',
+                  'links': 'links to source news that this recommendation is based'
+                }
+            }
+
+            Do not add any other text or explanations before or after the JSON.";
+
+            return prompt;
+
+        }
+    }
+}
