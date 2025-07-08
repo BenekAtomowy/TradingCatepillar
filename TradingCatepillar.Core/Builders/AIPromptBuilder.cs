@@ -17,15 +17,13 @@ namespace TradingCatepillar.Core.Builders
                             SMA: {instrumentPrompt.InstrumentIndicators.Sma:F2}
                             ATR: {instrumentPrompt.InstrumentIndicators.Atr:F2}
                             MACD: {instrumentPrompt.InstrumentIndicators.Macd:F2}";
-            prompt.OutputDataFormat = @"Based on the information found and the indicators I calculated, evaluate the financial instrument and return EXCLUSIVELY JSON in the following format:
+            prompt.OutputDataFormat = @"Based on the information found and the indicators I calculated, evaluate the financial instrument and return EXCLUSIVELY a single JSON object in the following format (do NOT return an array):
             {
-                {
-                  'recommendation': 'BUY | SELL | HOLD',
-                  'risk': 'LOW | MEDIUM | HIGH',
-                  'riskPercent': 'percentage of risk',
-                  'comment': '...',
-                  'links': 'links to source news that this recommendation is based'
-                }
+              'recommendation': 'BUY | SELL | HOLD',
+              'risk': 'LOW | MEDIUM | HIGH',
+              'riskPercent': 'percentage of risk',
+              'comment': '...',
+              'links': 'links to source news that this recommendation is based'
             }
 
             Do not add any other text or explanations before or after the JSON.";

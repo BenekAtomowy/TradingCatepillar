@@ -81,7 +81,6 @@ namespace TradingCatepillar.Alpaca.Connector.Services
         {
             string symbol = "USO";
             TimeSpan timeframe = TimeSpan.FromHours(1);
-            int historicalBarsCount = 100;
 
             DateTime endTime = DateTime.UtcNow.AddDays(-1);
             DateTime startTime = endTime.AddDays(-7);

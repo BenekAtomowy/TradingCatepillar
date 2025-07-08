@@ -12,8 +12,6 @@ namespace TradingCatepillar.AlpacaAPI.Connector
         /// <summary>
         /// Client integrating the connection with Alpaca API and trading strategy.
         /// </summary>
-        private readonly TimeSpan _interval = TimeSpan.FromMilliseconds(5000);
-        private List<string> _watchlist = new List<string>() {  };
 
         private IAlpacaTradingClient _tradingClient;
         private IAlpacaDataClient _dataClient;
@@ -40,7 +38,6 @@ namespace TradingCatepillar.AlpacaAPI.Connector
 
             // Strategy settings - candle interval, number of historical candles, and polling interval
             TimeSpan timeframe = TimeSpan.FromHours(2);
-            int historicalBarsCount = 100;
 
         }
     }
