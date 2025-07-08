@@ -26,7 +26,8 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IAIRecommendationService, AIRecommendationService>();
         services.AddTransient<IAIPromptBuilder, AIPromptBuilder>();
         services.AddTransient<IIndicatorCalculationService, IndicatorCalculationService>();
-        services.AddTransient<InstrumentWorkerBuilder>();
+        services.AddTransient<IInstrumentWorkerBuilder, InstrumentWorkerBuilder>();
+        services.AddTransient<IInstrumentWorkerService, InstrumentWorkerService>();
         return services;
     }
 }

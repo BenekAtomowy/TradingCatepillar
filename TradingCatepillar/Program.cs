@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TradingCatepillar.AlpacaAPI.Connector;
 using TradingCatepillar.Core.Builders;
+using TradingCatepillar.Core.Services.Interafaces;
 
 Console.WriteLine("Trading Catepillar - console app");
 
@@ -22,15 +23,13 @@ var host = Host.CreateDefaultBuilder(args)
 
 await host.Services.GetRequiredService<AlpacaAPIClient>().Initialize();
 
-var workerBuilder = host.Services.GetRequiredService<InstrumentWorkerBuilder>();
+var workerService = host.Services.GetRequiredService<IInstrumentWorkerService>();
 
-var worker = workerBuilder.BuildWorker("MSFT");
-var worker2 = workerBuilder.BuildWorker("AAPL");
-var worker3 = workerBuilder.BuildWorker("LMT");
+workerService.AddWorker("MSFT");
+workerService.AddWorker("AAPL");
+workerService.AddWorker("LMT");
 
-await worker.WorkWithInstrument();
-await worker2.WorkWithInstrument();
-await worker3.WorkWithInstrument();
+await workerService.WorkAllAsync();
 
 var test = "";
 
