@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
   </ItemGroup>
@@ -15,6 +16,7 @@
     <ProjectReference Include="..\TradingCatepillar.Alpaca.Connector\TradingCatepillar.Alpaca.Connector.csproj" />
     <ProjectReference Include="..\TradingCatepillar.Data.Analysis\TradingCatepillar.Data.Analysis.csproj" />
     <ProjectReference Include="..\TradingCatepillar.Integration.GoogleGemini\TradingCatepillar.Integration.GoogleGemini.csproj" />
+    <ProjectReference Include="..\TradingCatepillar.Persistence\TradingCatepillar.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,10 @@
-﻿using TradingCatepillar.Alpaca.Connector.Services.Interfaces;
+﻿using AutoMapper;
+using TradingCatepillar.Alpaca.Connector.Services.Interfaces;
 using TradingCatepillar.Core.Models;
 using TradingCatepillar.Core.Services.Interafaces;
 using TradingCatepillar.Data.Analysis.Services.Interfaces;
+using TradingCatepillar.Persistence.Models;
+using TradingCatepillar.Persistence.Repositories.Interfaces;
 
 namespace TradingCatepillar.Core.Workers
 {
@@ -10,15 +13,24 @@ namespace TradingCatepillar.Core.Workers
         private readonly IAlpacaDataService _alpacaDataService;
         private readonly IIndicatorCalculationService _indicatorCalculationService;
         private readonly IAIRecommendationService _aiRecommendationService;
+        private readonly IMapper _mapper;
+        private readonly IRepository<Recommendation> _recommendationRepository;
 
         private string? _symbol;
 
 
-        public InstrumentWorker(IAlpacaDataService alpacaDataService, IIndicatorCalculationService indicatorCalculationService, IAIRecommendationService aiRecommendationService)
+        public InstrumentWorker(
+            IAlpacaDataService alpacaDataService,
+            IIndicatorCalculationService indicatorCalculationService,
+            IAIRecommendationService aiRecommendationService,
+            IMapper mapper,
+            IRepository<Recommendation> recommendationRepository)
         {
             _alpacaDataService = alpacaDataService;
             _indicatorCalculationService = indicatorCalculationService;
             _aiRecommendationService = aiRecommendationService;
+            _mapper = mapper;
+            _recommendationRepository = recommendationRepository;
         }
 
         internal void Initialize(string symbol)
@@ -58,6 +70,9 @@ namespace TradingCatepillar.Core.Workers
 
             var result = await _aiRecommendationService.GetRecommendationAsync(instrumentInfo);
 
+            var model = _mapper.Map<Recommendation>(result);
+            await _recommendationRepository.AddAsync(model);
+            var rec = _recommendationRepository.GetAll().ToList();
         }
 
     }

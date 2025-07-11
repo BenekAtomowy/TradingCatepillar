@@ -11,6 +11,9 @@ using TradingCatepillar.Data.Analysis.Services;
 using TradingCatepillar.Data.Analysis.Services.Interfaces;
 using TradingCatepillar.Integration.GoogleGemini.Services;
 using TradingCatepillar.Integration.GoogleGemini.Services.Interfaces;
+using TradingCatepillar.Persistence.Models;
+using TradingCatepillar.Persistence.Repositories;
+using TradingCatepillar.Persistence.Repositories.Interfaces;
 
 public static class ServiceCollectionExtensions
 {
@@ -28,6 +31,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IIndicatorCalculationService, IndicatorCalculationService>();
         services.AddTransient<IInstrumentWorkerBuilder, InstrumentWorkerBuilder>();
         services.AddTransient<IInstrumentWorkerService, InstrumentWorkerService>();
+        services.AddTransient<IRepository<Recommendation>, RecommendationRepository>();
         return services;
     }
 }

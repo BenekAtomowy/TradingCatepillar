@@ -16,7 +16,11 @@ namespace TradingCatepillar.Integration.GoogleGemini.Models
         [JsonPropertyName("riskPercent")]
         public string? RiskPercent { get; set; }
         [JsonPropertyName("comment")]
-        public string? Comment { get; set; } 
+        public string? Comment { get; set; }
+        [JsonPropertyName("summary")]
+        public string? Summary { get; set; }
+        [JsonPropertyName("links")]
+        public List<string>? Links { get; set; }
 
     }
 }

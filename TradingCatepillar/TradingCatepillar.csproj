@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TradingCatepillar.Core\TradingCatepillar.Core.csproj" />
+    <ProjectReference Include="..\TradingCatepillar.Persistence\TradingCatepillar.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

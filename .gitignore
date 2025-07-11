@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 /appsettings.json
 /TradingCatepillar/appsettings.json
+/TradingCatepillar/mydatabase.db
+/TradingCatepillar/mydatabase.db-shm
+/TradingCatepillar/mydatabase.db-wal

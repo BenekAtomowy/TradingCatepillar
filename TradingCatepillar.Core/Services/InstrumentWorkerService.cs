@@ -38,7 +38,7 @@ namespace TradingCatepillar.Core.Services
                     Console.WriteLine($"Error during instrument processing: {ex.Message}");
                 }
                 // Wait for a while before the next iteration
-                await Task.Delay(TimeSpan.FromSeconds(20));
+                await Task.Delay(TimeSpan.FromMinutes(15));
             }
            
         }

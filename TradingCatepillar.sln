@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCatepillar.Data.Anal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCatepillar.Integration.GoogleGemini", "TradingCatepillar.Integration.GoogleGemini\TradingCatepillar.Integration.GoogleGemini.csproj", "{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCatepillar.Persistence", "TradingCatepillar.Persistence\TradingCatepillar.Persistence.csproj", "{1239929F-8E36-4EF8-9E52-DB210D577FFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F32C7D33-4672-4BDE-BCD7-AA5A606BEE8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1239929F-8E36-4EF8-9E52-DB210D577FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1239929F-8E36-4EF8-9E52-DB210D577FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1239929F-8E36-4EF8-9E52-DB210D577FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1239929F-8E36-4EF8-9E52-DB210D577FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
