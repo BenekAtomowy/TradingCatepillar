@@ -26,8 +26,18 @@ await host.Services.GetRequiredService<AlpacaAPIClient>().Initialize();
 var workerService = host.Services.GetRequiredService<IInstrumentWorkerService>();
 
 workerService.AddWorker("MSFT");
-workerService.AddWorker("AAPL");
-workerService.AddWorker("LMT");
+//workerService.AddWorker("AAPL");
+//workerService.AddWorker("LMT");
+//workerService.AddWorker("GOOGL");
+//workerService.AddWorker("AMZN");
+//workerService.AddWorker("TSLA");
+//workerService.AddWorker("NFLX");
+//workerService.AddWorker("META");
+//workerService.AddWorker("NVDA");
+//workerService.AddWorker("AMD");
+//workerService.AddWorker("INTC");
+//workerService.AddWorker("CSCO");
+
 
 await workerService.WorkAllAsync();
 

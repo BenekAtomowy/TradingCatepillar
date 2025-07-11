@@ -34,7 +34,7 @@ namespace TradingCatepillar.Integration.GoogleGemini.Services
 
         private async Task<string> GenerateContentAsync(string prompt)
         {
-            var url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={_apiKey}";
+            var url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={_apiKey}";
 
             var payload = new
             {

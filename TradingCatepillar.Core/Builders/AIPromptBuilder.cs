@@ -10,7 +10,7 @@ namespace TradingCatepillar.Core.Builders
         {
             var prompt = new AIPrompt();
             prompt.SystemInformation = "You are a financial assistant who always responds in JSON.";
-            prompt.PromptInformation = @$"Find information on the internet about the financial instrument with the symbol {instrumentPrompt.InstrumentSymbol}                                                                 
+            prompt.PromptInformation = @$"Find latest helpful for analysis information on the internet about the financial instrument with the symbol {instrumentPrompt.InstrumentSymbol} and deeply research it.                                                                
                             The indicators I calculated:
                             RSI: {instrumentPrompt.InstrumentIndicators.Rsi:F2}
                             EMA: {instrumentPrompt.InstrumentIndicators.Ema:F2}
@@ -22,7 +22,8 @@ namespace TradingCatepillar.Core.Builders
               'recommendation': 'BUY | SELL | HOLD',
               'risk': 'LOW | MEDIUM | HIGH',
               'riskPercent': 'percentage of risk',
-              'comment': '...',
+              'comment': 'comment based on indicators',
+              'summary': 'summary of information from research in internet',
               'links': 'links to source news that this recommendation is based'
             }
 
